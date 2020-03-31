@@ -1,0 +1,347 @@
+/* css样式初始化 */
+html,
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+button,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+input[type=color], input[type=date], 
+input[type=datetime-local], input[type=datetime],
+ input[type=email], input[type=month], 
+ input[type=number], input[type=password],
+	input[type=search], input[type=tel], 
+	input[type=text], input[type=time], input[type=url],
+	 input[type=week], select, textarea{
+	margin: 0;
+	font-size: 0.9375rem;
+}
+li{
+	list-style-type: none;
+}
+html{
+	font-size: 16px;
+}
+body{
+	background-color: #F0F0F0;
+	font-size: 0.875rem;
+	color: #333333;
+	font-family: "SourceHanSansSC-Regular";
+	font-weight: 500;
+}
+
+/* -----字体颜色---- */
+.white{
+	color: white;
+}
+.maincolor{
+	color: #333333;
+}
+.red{
+	color: #F93D0B;
+}
+.blue{
+	color: #599AF8;
+}
+.yellow{
+	color: #FEA61C;
+}
+.lightgray{
+	color: #E8E8E8;
+}
+.gray{
+	color: #999999;
+}
+.darkgray{
+	color: #666666;
+}
+.darkgray1{
+	color: #4D4D4D;
+}
+.green{
+	color: #82D749;
+}
+.black{
+	color: #171717;
+}
+
+/* -----字体颜色---- */
+
+/* -----背景颜色---- */
+.bg-blue{
+	background-color: #599AF8 !important;
+	color: white;
+}
+.bg-red{
+	background-color: #FF5A5A;
+	color: white;
+}
+.bg-yellow{
+	background-color: #FEA61C !important;
+	color: #FFFFFF;
+}
+.btn-bg-gray{
+	background-color: #BEBEBE;
+	color: #686868;
+}
+/* -----背景颜色 ---- */
+
+/* -----字体大小---- */
+.fontSize6{
+	font-size: 0.375rem !important;
+}
+.fontSize8{
+	font-size: 0.5rem !important;
+}
+.fontSize10{
+	font-size: 0.625rem !important;
+}
+.fontSize12{
+	/* font-size: 0.75rem !important; */
+	font-size: 3vw;
+}
+.fontSize13{
+	font-size: 0.8125rem !important;
+}
+.fontSize14{
+	font-size: 0.875rem !important;
+}
+.fontSize16{
+	font-size: 1rem;
+}
+.fontSize20{
+	font-size: 20px;
+}
+.fontSize22{
+	font-size: 1.375rem !important;
+}
+.font7v{
+	font-size: 6vw;
+}
+.fontSize10v{
+	font-size: 10vw;
+	line-height: 10vw;
+}
+.fontSize12v{
+	font-size: 12vw;
+}
+.fontSize66{
+	font-size: 66px !important;
+}
+.fontweight500{
+	font-weight: 500;
+}
+.fontweight600{
+	font-weight: 600;
+}
+/* -----字体大小---- */
+
+/* -----边距margin---- */
+.marginl5{
+	margin-left: 5px;
+}
+.marginl10{
+	margin-left: 10px;
+}
+.marginl15{
+	margin-left: 15px;
+}
+
+.marginr5{
+	margin-right: 5px;
+}
+.marginr20{
+	margin-right: 1.25rem;
+}
+.margint5{
+	margin-top: 0.3125rem;
+}
+.margint10{
+	margin-top: 0.625rem;
+}
+.margint20{
+	margin-top: 1.25rem;
+}
+.margintb5{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.margintb20{
+	margin-top: 1.3rem;
+	margin-bottom: 1.3rem;
+}
+.marginb15{
+	margin-bottom: 1rem;
+}
+.margintb10{
+	margin-top: 0.625rem;
+	margin-bottom: 0.625rem;
+}
+.margintb15{
+	margin-top: 0.9375rem;
+	margin-bottom: 0.9375rem;
+}
+/* -----边距margin---- */
+
+/* -----边距padding---- */
+.padding5{
+	padding: 0.3125rem;
+}
+.padding8{
+	padding: 0.5rem;
+}
+.paddingtb10{
+	padding-top: 0.625rem;
+	padding-bottom: 0.625rem;
+}
+.paddingtb20{
+	padding: 20px 0;
+}
+.padding10{
+	padding: 10px;
+}
+.paddingl5{
+	padding-left: 0.3125rem;
+}
+.paddingl8{
+	padding-left: 0.5rem;
+}
+.paddingl15{
+	padding-left: 0.9375rem;
+}
+.paddingr15{
+	padding-right: 0.9375rem;
+}
+.paddinglr10{
+	padding-left: 0.625rem;
+	padding-right: 0.625rem;
+}
+.paddinglr15{
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
+}
+.paddinglr20{
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+/* -----边距padding---- */
+/* -----行高---- */
+.lineheight30{
+	line-height: 1.875rem !important;
+}
+.lineheight20{
+	line-height: 1.25rem !important;
+}
+.lineheight21{
+	line-height: 1.3rem !important;
+}
+.lineheight25{
+	line-height: 1.5625rem !important;
+}
+/* ----------- */
+
+/* -----头部下阴影---- */
+.mui-bar-nav{
+	box-shadow: none;
+}
+/* ----------- */
+
+/* 文字位置 */
+.textcenter{
+	text-align: center;
+}
+.textleft{
+	text-align: left;
+}
+.textright{
+	text-align: right;
+}
+/* 按钮 */
+.smbtn{
+	border: none;
+	padding: 0.1875rem 0.625rem;
+	border-radius: 0.3125rem;
+}
+/* 按钮 */
+/* 宽 */
+.width10{
+	width: 10%;
+}
+.width20{
+	width: 20%;
+}
+.width100{
+	width: 100%;
+}
+.width80{
+	width: 80% !important;
+}
+/* 高 */
+.h100{
+	height: 100%;
+}
+/* 定位 */
+.positionrel{
+	position: relative;
+}
+.positionfather{
+	position: inherit;
+}
+/* 浮动 */
+.pull-right{
+	float: right;
+}
+/* 圆角 */
+.borderra10{
+	border-radius: 10px;
+}
+/* 首行缩进 */
+.textindent2{
+	text-indent: 2rem;
+}
+/* 其他 */
+.boxSize{
+	box-sizing: border-box;
+}
+.mui-pull-bottom-wrapper{
+	text-align: center;
+	color: grey;
+}
+.mui-toast-container {
+	margin-bottom: 40vh;
+}
+.flexBC{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.flex{
+	display: flex;
+}
+.flexc{
+	align-items: center;
+}
