@@ -18,14 +18,66 @@
                 <span>君羚商城</span>
             </a>
         </div>
+        <div class="content"  v-infinite-scroll="load" infinite-scroll-disabled="disabled">
+            <div class="title">
+                <img src="http://img.99add.com//qd/qrcode/20200206/1,580,957,003,973.png" alt="" class="hot">
+                <img src="http://img.99add.com//qd/qrcode/20200206/1,580,957,032,208.png" alt="" class="featured">
+            </div>
+            <div class="goods">
+                <div class="goodsColumn goodsLeft">
+                    <a class="goodItem" href="http://www.99add.com/MP5.0/Index.Near.show.asp?id=8842" id="id8842">
+                        <img src="http://www.99add.com/UploadFiles/UserData/www/image/20200218/20200218143783498349.jpg" alt="" class="goodImg">
+                        <div class="padding5 fontSize12">
+                            <p class="goodTitle maincolor">哈喜露消毒液 500ml（79元/包邮）</p>
+                            <div class="flexBC margint5">
+                                <span class="red">¥77</span>
+                                <span class="gray">销量：324</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+               <div class="goodsColumn goodsLeft">
+                    <a class="goodItem" href="http://www.99add.com/MP5.0/Index.Near.show.asp?id=8842" id="id8842">
+                        <img src="http://www.99add.com/UploadFiles/UserData/www/image/20200218/20200218143783498349.jpg" alt="" class="goodImg">
+                        <div class="padding5 fontSize12">
+                            <p class="goodTitle maincolor">哈喜露消毒液 500ml（79元/包邮）</p>
+                            <div class="flexBC margint5">
+                                <span class="red">¥77</span>
+                                <span class="gray">销量：324</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <p v-if="loading">加载中...</p>
+            <p v-if="noMore">没有更多了</p>
+        </div>
     </div>
 </template>
 <script>
 export default {
   data () {
     return {
-        selected:"tab1"
+        loading:false,
+        page:1,
+        size:5
     }
+  },
+  methods:{
+      getGoods:function(){///SXShop/select/all/project
+        this.$axios.get(window.url.qshPath+'/SXShop/select/all/project', {
+            params: {
+                page: this.page,
+                size:this.size
+            }
+        })
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+      }
   }
 }
 </script>
@@ -73,6 +125,37 @@ export default {
                 display: block;
                 color: #333333;
                 font-size: 0.8125rem;
+            }
+        }
+    }
+    .content{
+        padding: 0 4px;
+        .title{
+            margin: 2vw 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .hot{
+                width: 3%;
+                margin-right: 5px;      
+            }
+            .featured{
+                width: 20%;
+            }
+        }
+        .goods{
+            display: flex;
+            justify-content: space-between;
+            .goodsColumn{
+                width: 49%;
+                .goodItem{
+                    border-radius: 5px;
+                    background-color: white;
+                    display: block;
+                    text-decoration: none;
+                    overflow: hidden;
+                    img{width: 100%;}
+                }
             }
         }
     }
