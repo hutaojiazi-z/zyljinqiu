@@ -121,8 +121,8 @@ body{
 	font-size: 0.625rem !important;
 }
 .fontSize12{
-	/* font-size: 0.75rem !important; */
-	font-size: 3vw;
+	font-size: 0.75rem !important;
+	/* font-size: 3vw; */
 }
 .fontSize13{
 	font-size: 0.8125rem !important;
