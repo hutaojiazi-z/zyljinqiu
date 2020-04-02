@@ -32,14 +32,14 @@
             <el-col :span="12">
               <a href="../page/cheats/merchantsSettled.html">
                 <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize14">商家入驻流程</span> 
+                <span class="fontSize12">商家入驻流程</span> 
                 <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
               </a>
             </el-col>
             <el-col :span="12">
               <a href="../page/cheats/groupSettled.html" class="mui-col-xs-6 mui-col-sm-6 paddingl5">
                 <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize14">群主入驻流程</span> 
+                <span class="fontSize12">群主入驻流程</span> 
                 <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
               </a>
             </el-col>
@@ -50,14 +50,14 @@
             <el-col :span="12">
               <a href="../page/cheats/merchant.html" class="mui-col-xs-6 mui-col-sm-6">
                 <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize14">商家如何推广</span> 
+                <span class="fontSize12">商家如何推广</span> 
                 <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
               </a>
           </el-col>
             <el-col :span="12">
               <a href="../page/cheats/group _owner.html" class="mui-col-xs-6 mui-col-sm-6 paddingl5">
                 <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize14">群主怎样赚钱</span> 
+                <span class="fontSize12">群主怎样赚钱</span> 
                 <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
               </a>
            </el-col>
@@ -68,14 +68,14 @@
             <el-col :span="12">
               <a href="../page/cheats/merchant.html" class="mui-col-xs-6 mui-col-sm-6">
                 <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize14">我是招商领袖该怎么做</span> 
+                <span class="fontSize12">我是招商领袖该怎么做</span> 
                 <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
               </a>
           </el-col>
             <el-col :span="12">
               <a href="../page/cheats/group _owner.html" class="mui-col-xs-6 mui-col-sm-6 paddingl5">
                 <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize14">我是社群领袖该怎么做</span> 
+                <span class="fontSize12">我是社群领袖该怎么做</span> 
                 <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
               </a>
            </el-col>
@@ -86,7 +86,7 @@
             <el-col :span="12">
               <a href="../page/cheats/merchant.html" class="mui-col-xs-6 mui-col-sm-6">
                 <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize14">我是运营该怎么做</span> 
+                <span class="fontSize12">我是运营该怎么做</span> 
                 <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
               </a>
            </el-col>

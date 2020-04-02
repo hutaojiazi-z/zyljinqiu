@@ -18,37 +18,26 @@
                 <span>君羚商城</span>
             </a>
         </div>
-        <div class="content"  v-infinite-scroll="load" infinite-scroll-disabled="disabled">
+         <!-- v-infinite-scroll="load" infinite-scroll-disabled="disabled" -->
+        <div class="content" >
             <div class="title">
                 <img src="http://img.99add.com//qd/qrcode/20200206/1,580,957,003,973.png" alt="" class="hot">
                 <img src="http://img.99add.com//qd/qrcode/20200206/1,580,957,032,208.png" alt="" class="featured">
             </div>
-            <div class="goods">
+            <mt-loadmore class="goods"  :bottomMethod="loadMore" :bottomAllLoaded="loading" :bottomDistance="60">
                 <div class="goodsColumn goodsLeft">
-                    <a class="goodItem" href="http://www.99add.com/MP5.0/Index.Near.show.asp?id=8842" id="id8842">
-                        <img src="http://www.99add.com/UploadFiles/UserData/www/image/20200218/20200218143783498349.jpg" alt="" class="goodImg">
+                    <a  class="goodItem"  v-for="item in goosList" :key="item" :href="'http://www.99add.com/MP5.0/Index.Near.show.asp?id='+item.nUid" :id="item.nUid">
+                        <img :src="'http://www.99add.com'+item.pic1" alt="" class="goodImg">
                         <div class="padding5 fontSize12">
-                            <p class="goodTitle maincolor">哈喜露消毒液 500ml（79元/包邮）</p>
+                            <p class="goodTitle maincolor">{{item.nBrief}}</p>
                             <div class="flexBC margint5">
-                                <span class="red">¥77</span>
-                                <span class="gray">销量：324</span>
+                                <span class="red">¥{{item.nPay || item.nPayl}}</span>
+                                <span class="gray">销量：{{item.payed}}</span>
                             </div>
                         </div>
                     </a>
                 </div>
-               <div class="goodsColumn goodsLeft">
-                    <a class="goodItem" href="http://www.99add.com/MP5.0/Index.Near.show.asp?id=8842" id="id8842">
-                        <img src="http://www.99add.com/UploadFiles/UserData/www/image/20200218/20200218143783498349.jpg" alt="" class="goodImg">
-                        <div class="padding5 fontSize12">
-                            <p class="goodTitle maincolor">哈喜露消毒液 500ml（79元/包邮）</p>
-                            <div class="flexBC margint5">
-                                <span class="red">¥77</span>
-                                <span class="gray">销量：324</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            </mt-loadmore>
             <p v-if="loading">加载中...</p>
             <p v-if="noMore">没有更多了</p>
         </div>
@@ -59,31 +48,54 @@ export default {
   data () {
     return {
         loading:false,
+        noMore:false,
         page:1,
-        size:5
+        size:5,
+        goosList:[]
     }
   },
+  mounted(){
+    this.getGoods()
+  },
   methods:{
-      getGoods:function(){///SXShop/select/all/project
+      getGoods(){
+      let vm = this;
         this.$axios.get(window.url.qshPath+'/SXShop/select/all/project', {
             params: {
-                page: this.page,
-                size:this.size
+                page: vm.page,
+                size:vm.size
             }
         })
-        .then(function (response) {
-            console.log(response);
+        .then(res => {
+            console.log(res);
+            console.log(vm.goosList);
+            vm.loading = false;
+            let data = res.data.data;
+            if(data.length>0){
+             vm.goosList = vm.goosList.concat(data);
+            //  vm.goosList.push(...data)
+            }
+            if(data.length<vm.size){
+                vm.noMore = true;
+            }
         })
-        .catch(function (error) {
-            console.log(error);
+        .catch(error => {
+            
         });
+      },
+      loadMore(){
+          this.loading = true;
+          this.page++;
+          this.getGoods();
+        //   this.allLoaded = true;// 若数据已全部获取完毕
+          this.$broadcast('onBottomLoaded');
       }
   }
 }
 </script>
 <style lang="less" scoped>
 .store{
-    margin-top: 50px;
+    overflow:scroll;
     .head{
         position: relative;
         width: 100%;
@@ -147,14 +159,21 @@ export default {
             display: flex;
             justify-content: space-between;
             .goodsColumn{
-                width: 49%;
+                display: flex;
+                 flex-wrap:wrap;
+                 justify-content: space-between;
                 .goodItem{
+                    width: 47vw;
                     border-radius: 5px;
                     background-color: white;
                     display: block;
                     text-decoration: none;
                     overflow: hidden;
+                    margin-top: 10px;
                     img{width: 100%;}
+                    &:nth-child(2n){
+                        margin-right:0;
+                    }
                 }
             }
         }

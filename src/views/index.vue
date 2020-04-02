@@ -9,7 +9,7 @@
       <store></store>
     </mt-tab-container-item>
     <mt-tab-container-item id="tab3">
-      <mt-cell v-for="n in 6" :title="'选项 ' + n" :key="n"></mt-cell>
+      <message></message>
     </mt-tab-container-item>
     <mt-tab-container-item id="tab4">
       <mt-cell v-for="n in 50" :title="'选项 ' + n" :key="n"></mt-cell>
@@ -47,10 +47,12 @@
 <script>
 import mainIndex from "./index/index";
 import store from "./store/store";
+import message from "./message/message"
 export default {
   components:{
     mainIndex,
-    store
+    store,
+    message
   },
   name: 'app',
   data () {
@@ -61,22 +63,19 @@ export default {
 }
 </script>
 <style>
-.mint-tab-container{
-  position: relative;
-  bottom: 50px;
-  overflow: scroll;
+
+.mint-tab-container {
+    position: absolute;
+    bottom: 50px;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    overflow: scroll;
 }
 </style>
 <style scoped lang="less">
-.index{
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  bottom: 0;
-}
 .buttombtn{
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 .mint-tabbar > .mint-tab-item.is-selected{
