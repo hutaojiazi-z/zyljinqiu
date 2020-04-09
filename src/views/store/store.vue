@@ -2,7 +2,7 @@
     <div class="store padding5">
         <div class="head">
             <img  src="http://img.99add.com//qd/qrcode/20200206/1,580,956,923,361.png" />
-            <button class="howChoose fontSize12" @click="howChose">怎么选择商城？</button>
+            <button class="howChoose fontSize12" >怎么选择商城？</button>
         </div>
         <div class="chooseShop padding10">
             <a class="shopNavi" href="http://www.yeyepopo.cn/app/index.php?i=2&c=entry&m=zk_jqvshop&do=Home">

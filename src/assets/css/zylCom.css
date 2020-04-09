@@ -349,3 +349,7 @@ body{
 .flexc{
 	align-items: center;
 }
+.radiusul{
+	border-radius: 5px;
+	background-color: white;
+}

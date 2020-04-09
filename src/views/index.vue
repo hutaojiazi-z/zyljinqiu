@@ -1,7 +1,7 @@
 <template>
 <div class="index">
   <!-- tab-container -->
-  <mt-tab-container v-model="selected">
+  <!-- <mt-tab-container v-model="selected">
     <mt-tab-container-item id="tab1">
         <mainIndex></mainIndex>
     </mt-tab-container-item>
@@ -17,31 +17,31 @@
     <mt-tab-container-item id="tab5">
       <mt-cell v-for="n in 6" :title="'选项 ' + n" :key="n"></mt-cell>
     </mt-tab-container-item>
-  </mt-tab-container>
-  <!-- <router-view></router-view> -->
+  </mt-tab-container> -->
+      <router-view></router-view>
   <!-- 底部标签 -->
-    <mt-tabbar v-model="selected">
-      <mt-tab-item id="tab1">
+    <div class="bottomBtn">
+      <router-link class="active" to="/index">
           <i class="iconfont icon-shouye navfont"></i>
-					<p class="mui-tab-label">首页</p>
-      </mt-tab-item>
-      <mt-tab-item id="tab2">
+					<p>首页</p>
+      </router-link>
+      <router-link to="/store">
           <i class="iconfont icon-shangcheng-xianxing navfont"></i>
-					<p class="mui-tab-label">商城</p>
-      </mt-tab-item>
-      <mt-tab-item id="tab3">
+					<p>商城</p>
+      </router-link>
+      <router-link to="/message">
 					<i class="iconfont icon-xiaoxi1 navfont"></i>
-					<p class="mui-tab-label">消息</p>
-      </mt-tab-item>
-      <mt-tab-item id="tab4">
-					<i class="iconfont icon-iconfontbangzhu" style="font-size: 21px;"></i>
-					<p class="mui-tab-label">帮助</p>
-      </mt-tab-item>
-      <mt-tab-item id="tab5">
+					<p>消息</p>
+      </router-link>
+      <router-link to="/help">
 					<i class="iconfont icon-wode navfont"></i>
-					<p class="mui-tab-label">我的</p>
-      </mt-tab-item>
-    </mt-tabbar>
+					<p>帮助</p>
+      </router-link>
+      <router-link to="/mine">
+					<i class="iconfont icon-wode navfont"></i>
+					<p>我的</p>
+      </router-link>
+    </div>
 </div>
 </template>
 <script>
@@ -57,29 +57,29 @@ export default {
   name: 'app',
   data () {
     return {
-        selected:"tab1"
+        
     }
   }
 }
 </script>
-<style>
-
-.mint-tab-container {
-    position: absolute;
-    bottom: 50px;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    overflow: scroll;
-}
-</style>
 <style scoped lang="less">
-.buttombtn{
+.bottomBtn{
   position: fixed;
   bottom: 0;
-}
-.mint-tabbar > .mint-tab-item.is-selected{
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
   background-color: white;
-  color: #FEA61C;
+  padding: 5px 0;
+  a{
+    text-align: center;
+    text-decoration: none;
+    color: #999999;
+    
+  }
+  .active{
+    color: #FEA61C;
+
+  }
 }
 </style>
