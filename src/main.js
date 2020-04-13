@@ -1,8 +1,8 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
-// import App from './views/App'
-import index from './views/index'
+import App from './views/App'
+// import index from './views/index'
 import router from './router'
 //引入饿了么组件
 import ElementUI from 'element-ui';
@@ -123,5 +123,5 @@ window.userInfo = JSON.parse(localStorage.getItem("userInfo"));
 new Vue({
   el: '#app',
   router,
-  render: h => h(index)
+  render: h => h(App)
 }); 

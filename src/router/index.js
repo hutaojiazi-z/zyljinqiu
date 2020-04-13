@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/views/index/index'
 import store from '@/views/store/store'
-import message from '@/views/message/message'
+import help from '@/views/help/help'
 import mine from '@/views/mine/mine'
 import messageSet from '@/views/setting/setMsg'
 
@@ -25,8 +25,8 @@ export default new Router({
       component: store
     },
     {//消息
-      path: '/message',
-      component: message,
+      path: '/help',
+      component: help,
     },
     {//我的
       path: '/mine',
