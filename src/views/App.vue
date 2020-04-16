@@ -28,9 +28,9 @@ export default {
           name:"商城"
         },
          {
-          path:"/help",
-          icon:"icon-iconfontbangzhu",
-          name:"帮助"
+          path:"/message",
+          icon:"icon-xiaoxi",
+          name:"消息"
         },
          {
           path:"/mine",

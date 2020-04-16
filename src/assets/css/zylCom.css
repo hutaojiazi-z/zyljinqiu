@@ -215,6 +215,12 @@ body{
 	margin-top: 0.9375rem;
 	margin-bottom: 0.9375rem;
 }
+.marginb20{
+	margin-bottom: 1.3rem;
+}
+.marginb10{
+	margin-bottom: 10px;
+}
 /* -----边距margin---- */
 
 /* -----边距padding---- */

@@ -9,13 +9,11 @@
     </mt-swipe>
   </div>
   <div class="padding8">
-    <div class="enter">
+    <div class="enter paddingtb10">
       <el-row>
-        <el-col class="paddinglr15" :span="12">
-          <img src="http://img.99add.com/@/null/icon/20200323/1,584,953,788,889.png">
-        </el-col>
-        <el-col class="paddinglr15" :span="12">
-          <img src="http://img.99add.com/@/null/icon/20200323/1,584,953,721,715.png" >
+        <el-col :span="8" v-for="(item,index) in mainmenu" :key="index">
+          <img :src="item.src" @click="moveto(index,item)">
+          <h3 class="">{{item.name}}</h3>
         </el-col>
       </el-row>
     </div>
@@ -26,71 +24,15 @@
         <span class="gray fontSize13" v-show="!mackemore" @click="lookMore">更多<i class="iconfont icon-iconfontjiantou6 fontSize13"></i></span>
         <span class="gray fontSize13" v-show="mackemore" @click="lookMore">收起<i class="iconfont icon-xiangxiajiantou fontSize13"></i></span>
       </div>
-      <ul class="makeDetail fontSize12">
+      <ul class="makeDetail fontSize12" style="overflow: hidden;">
         <li>
-          <el-row>
-            <el-col :span="12">
-              <a href="../page/cheats/merchantsSettled.html">
-                <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize12">商家入驻流程</span> 
-                <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
-              </a>
-            </el-col>
-            <el-col :span="12">
-              <a href="../page/cheats/groupSettled.html" class="mui-col-xs-6 mui-col-sm-6 paddingl5">
-                <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize12">群主入驻流程</span> 
-                <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
-              </a>
-            </el-col>
-          </el-row>
-        </li>
-        <li class="mui-row">
-          <el-row>
-            <el-col :span="12">
-              <a href="../page/cheats/merchant.html" class="mui-col-xs-6 mui-col-sm-6">
-                <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize12">商家如何推广</span> 
-                <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
-              </a>
+          <el-col v-for="(item,index) in makemoney" v-show="index < liIndex" :key="index" :span="12" class="marginb10">
+            <a href="../page/cheats/merchantsSettled.html">
+              <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
+              <span class="fontSize12">{{item.name}}</span> 
+              <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
+            </a>
           </el-col>
-            <el-col :span="12">
-              <a href="../page/cheats/group _owner.html" class="mui-col-xs-6 mui-col-sm-6 paddingl5">
-                <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize12">群主怎样赚钱</span> 
-                <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
-              </a>
-           </el-col>
-          </el-row>
-        </li>
-        <li class="mui-row" v-show="mackemore">
-          <el-row>
-            <el-col :span="12">
-              <a href="../page/cheats/merchant.html" class="mui-col-xs-6 mui-col-sm-6">
-                <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize12">我是招商领袖该怎么做</span> 
-                <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
-              </a>
-          </el-col>
-            <el-col :span="12">
-              <a href="../page/cheats/group _owner.html" class="mui-col-xs-6 mui-col-sm-6 paddingl5">
-                <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize12">我是社群领袖该怎么做</span> 
-                <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
-              </a>
-           </el-col>
-          </el-row>
-        </li>
-        <li class="mui-row" v-show="mackemore" >
-          <el-row>
-            <el-col :span="12">
-              <a href="../page/cheats/merchant.html" class="mui-col-xs-6 mui-col-sm-6">
-                <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
-                <span class="fontSize12">我是运营该怎么做</span> 
-                <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
-              </a>
-           </el-col>
-          </el-row>
         </li>
       </ul>
     </div>
@@ -103,12 +45,60 @@ export default {
     return {
         value:"",
         mackemore:false,
+        liIndex: 4,
         images:[
           "http://img.99add.com//qd/qrcode/20200207/1,581,056,792,377.png",
           "http://img.99add.com/@/qd/qrcode/20191226/1,577,329,102,736.png",
           "http://img.99add.com/@/qd/qrcode/20191226/1,577,329,153,956.png",
           "http://img.99add.com/@/qd/qrcode/20191226/1,577,329,208,071.png",
           "http://img.99add.com/@/qd/qrcode/20191226/1,577,329,259,628.png"
+        ],
+        mainmenu:[
+          {
+            path:"/index/shopIndex",
+            src:"http://img.99add.com/@/null/icon/20200410/1,586,510,868,746.png",
+            name:"商家入驻"
+         },
+         {
+            path:"/index/shopIndex",
+            src:"http://img.99add.com/@/null/icon/20200410/1,586,510,686,363.png",
+            name:"流量主入驻"
+         },
+         {
+            path:"/index/shopIndex",
+            src:"http://img.99add.com/@/null/icon/20200410/1,586,510,848,015.png",
+            name:"客户经理入驻"
+         }
+        ],
+        makemoney:[
+          {
+            name:"商家入驻流程",
+            url:"#"
+          },
+          {
+            name:"群主入驻流程",
+            url:"#"
+          },
+          {
+            name:"商家如何推广",
+            url:"#"
+          },
+          {
+            name:"群主怎样赚钱",
+            url:"#"
+          },
+          {
+            name:"我是招商领袖该怎么做",
+            url:"#"
+          },
+          {
+            name:"我是社群领袖该怎么做",
+            url:"#"
+          },
+          {
+            name:"我是运营该怎么做",
+            url:"#"
+          }
         ]
       
     }
@@ -116,6 +106,12 @@ export default {
   methods:{
     lookMore(){
       this.mackemore = !this.mackemore;
+      this.liIndex = this.liIndex==4?999:4;
+    },
+    moveto(index,item){
+      // this.$route.push(item.path);
+      this.$router.push({path:item.path})
+      // this.$router.replace({path : item.path});
     }
   }
 }
@@ -153,9 +149,12 @@ a{
 .enter{
   background-color: white;
   border-radius: 5px;
-  padding: 2vw;
+  text-align: center;
   img{
-    width: 100%;
+    width: 10vw;
+  }
+  h3{
+    font-size: 0.65rem;
   }
 }
 /* 赚钱秘籍 */

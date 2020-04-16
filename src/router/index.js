@@ -3,8 +3,10 @@ import Router from 'vue-router'
 import index from '@/views/index/index'
 import store from '@/views/store/store'
 import help from '@/views/help/help'
+import message from '@/views/message/message'
 import mine from '@/views/mine/mine'
 import messageSet from '@/views/setting/setMsg'
+import shopIndex from '@/views/index/shop/shopIndex'
 
 Vue.use(Router)
 
@@ -25,8 +27,8 @@ export default new Router({
       component: store
     },
     {//消息
-      path: '/help',
-      component: help,
+      path: '/message',
+      component: message,
     },
     {//我的
       path: '/mine',
@@ -36,6 +38,9 @@ export default new Router({
       path: '/message/setting',
       component: messageSet
     },
-    
+    {//千商会首页
+      path: '/index/shopIndex',
+      component: shopIndex
+    },
   ]
 })
