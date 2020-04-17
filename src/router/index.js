@@ -6,7 +6,12 @@ import help from '@/views/help/help'
 import message from '@/views/message/message'
 import mine from '@/views/mine/mine'
 import messageSet from '@/views/setting/setMsg'
+// 商家入驻
 import shopIndex from '@/views/index/shop/shopIndex'
+import attract from '@/views/index/shop/attract'
+import shopenterIn from '@/views/index/shop/shopenterIn'
+import shoppublic from '@/views/index/shop/shoppublic'
+import rank from '@/views/index/shop/rank'
 
 Vue.use(Router)
 
@@ -40,7 +45,26 @@ export default new Router({
     },
     {//千商会首页
       path: '/index/shopIndex',
-      component: shopIndex
+      component: shopIndex,
+      redirect:'/index/shopIndex/shopenterIn',
+      children:[
+        {//商家入驻
+          path: 'shopenterIn',
+          component: shopenterIn
+        },
+        {//招商
+          path: 'attract',
+          component: attract
+        },
+        {//商家推广
+          path: 'shoppublic',
+          component: shoppublic
+        },
+        {//等级排行
+          path: 'rank',
+          component: rank
+        },
+      ]
     },
   ]
 })

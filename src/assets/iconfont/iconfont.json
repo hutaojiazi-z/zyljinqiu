@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6444229",
+      "name": "招商小程序-邀请榜",
+      "font_class": "zhaoshangxiaochengxu-yaoqingbang",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    },
+    {
+      "icon_id": "10392629",
+      "name": "交易",
+      "font_class": "jiaoyi",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
       "icon_id": "7029932",
       "name": "清除",
       "font_class": "qingchu",
