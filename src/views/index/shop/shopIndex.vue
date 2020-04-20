@@ -1,6 +1,8 @@
 <template>
   <div class="shopIndex">
-    <router-view></router-view>
+    <div class="minbody">
+      <router-view></router-view>
+    </div>
     <div class="bottomBtn">
       <!-- :class="activeMenu==index?'active':''" -->
       <div v-for="(item,index) in menuList" :key="index" :class="{'active':isactive(item)}"  @click="moveto(item,index)">
@@ -56,6 +58,9 @@ export default {
 }
 </script>
 <style scoped lang="less">
+.minbody{
+  margin-bottom: 50px;
+}
 .bottomBtn{
   z-index: 1;
   position: fixed;

@@ -1,36 +1,11 @@
 <template>
-  <div class="mask" :class="{hidden: hide}">
+  <div class="mask">
     <div class="content">
-      <div>
-        <slot name="bg"></slot>
-      </div>
-      <div class="btnbtnIkonw" @click="close">
-        <slot name="btn"></slot>
-      </div>
-      
+      <slot></slot>
     </div>
   </div>
 </template>
 <script>
-export default {
-  props: {
-    isShow: {
-      type: Boolean,
-      default: false
-    },
-  },
-  data() {
-    return {
-      hide: false
-    }
-  },
-  methods: {
-    close() {
-      // this.isShow = false
-      this.hide = true
-    }
-  },
-}
 </script>
 <style lang="less" scoped>
 .mask{
@@ -46,8 +21,10 @@ export default {
   align-items: center;
   .content{
     width: 80%;
-    height: 50%;
+    height: auto;
+    max-height: 75%;
     overflow: scroll;
+    position: relative;
     .btnbtnIkonw{
       border-radius: 15px;
       background-color: #fe9716;
@@ -55,9 +32,5 @@ export default {
       width: 100%;
     }
   }
-}
-
-.hidden {
-  display: none;
 }
 </style>
