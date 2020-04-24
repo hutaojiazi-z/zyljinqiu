@@ -57,7 +57,7 @@ export default {
       console.log(data)
     },
     getinputValue(){
-      this.$refs.search.getValue()
+      this.$refs.search.getkeyValue()
     },
     handleAvatarSuccess(res, file) {
       this.imageUrl = URL.createObjectURL(file.raw);

@@ -1,7 +1,7 @@
 <template>
   <div :class="searchClass" class="searchInput flexBC">
     <i class="iconfont icon-sousuo"></i>
-    <input type="text" :placeholder="placeholder" v-model="inputValue" @keydown.enter="getValue()" />
+    <input type="text" :placeholder="placeholder" v-model="inputValue" @keydown.enter="getkeyValue()" />
     <slot></slot>
   </div>
 </template>
@@ -23,7 +23,7 @@ export default {
     }
   },
   methods:{
-    getValue(){
+    getkeyValue(){
       this.$emit("inputValue",this.inputValue);
     }
   }
@@ -48,7 +48,7 @@ export default {
     }
     .icon-sousuo{
       position: absolute;
-      top: 15px;
+      // top: 15px;
       left: 25px;
       font-size: 14px;
     }

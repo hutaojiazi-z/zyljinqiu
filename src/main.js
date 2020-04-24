@@ -23,6 +23,17 @@ Vue.prototype.$axios = axios;//把axios加入到vue原型中
 //引入jquery
 import $ from 'jquery'
 
+//引入jsonp
+import vueJsonp from 'vue-jsonp'
+Vue.use(vueJsonp)
+
+//引入百度地图组件
+import BaiduMap from 'vue-baidu-map'
+Vue.use(BaiduMap, {
+  /* 申请的百度密钥，可以在百度地图官网申请 */
+  ak: 'dadGKoBhtMT2MT0cayrQWSdppReyn3bc'
+})
+
 window.url={
   forePath : "https://t5.jinqiunianhua.cn/login.html",
   zhPath : "https://t8.jinqiunianhua.cn/", //整合后

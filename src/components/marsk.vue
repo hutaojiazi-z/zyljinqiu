@@ -25,6 +25,7 @@
     max-height: 75%;
     overflow: scroll;
     position: relative;
+    border-radius: 8px;
     .btnbtnIkonw{
       border-radius: 15px;
       background-color: #fe9716;
