@@ -1,7 +1,10 @@
 <template>
   <div :class="searchClass" class="searchInput flexBC">
-    <i class="iconfont icon-sousuo"></i>
-    <input type="text" :placeholder="placeholder" v-model="inputValue" @keydown.enter="getkeyValue()" />
+    <slot name="cancel"></slot>
+    <div class="positionrel">
+      <i class="iconfont icon-sousuo"></i>
+      <input type="search" :placeholder="placeholder" v-model="inputValue" @keyup.13="getkeyValue()" />
+    </div>
     <slot></slot>
   </div>
 </template>
@@ -34,7 +37,9 @@ export default {
     background-color: white;
     padding: 8px 15px;
     position: relative;
-    input{
+    .positionrel{
+      flex: 1;
+      input{
       border: none;
       line-height: 24px;
       background-color: #EFEFEF;
@@ -48,9 +53,11 @@ export default {
     }
     .icon-sousuo{
       position: absolute;
-      // top: 15px;
-      left: 25px;
+      top: 8px;
+      left: 10px;
       font-size: 14px;
     }
+    }
+    
   }
 </style>

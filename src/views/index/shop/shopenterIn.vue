@@ -32,7 +32,7 @@
         <div class="liBG margint10">
           <h3 class="lihead paddingl8">选填项</h3>
           <el-form-item label="商家地址：">
-            <el-input v-model="form.shopAddress" placeholder="点击此处选择地址"></el-input>
+            <el-input v-model="form.shopAddress" placeholder="点击此处选择地址" @focus="chooseDress"></el-input>
           </el-form-item>
           <el-form-item label="详细地址：">
             <el-input v-model="form.shopAddressDetails" placeholder="填写具体地址，如幢数，门牌号"></el-input>
@@ -84,6 +84,7 @@
 <script>
 import mask1 from "../../../components/marsk"
 export default {
+  name: "shopenterIn",
   components:{
     mask1
   },
@@ -127,7 +128,12 @@ export default {
     }
   },
   mounted(){
+    let vm = this;
     this.getOptions();
+    this.$bus.$on("choseDetail",function(data){
+      console.log(data);
+      vm.form.shopAddress = data.address
+    })
   },
   methods: {
     checkPhone (rule, value, callback) {//验证手机号
@@ -176,12 +182,14 @@ export default {
       return o;
     },
     formTip(){//表单提交
+      let vm = this;
       let url = window.url.qshPath + "";
-      this.$axios.get(window.url.qshPath+'/SXShop/select/all/project', {
-        params: {
-          
-        }
+      this.$axios.get(url,vm.form).then(res=>{
+
       })
+    },
+    chooseDress(){
+      this.$router.push({name : "mymap"})
     }
   }
 }

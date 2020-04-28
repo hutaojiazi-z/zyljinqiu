@@ -1,7 +1,7 @@
 <template>
 <div class="index">
     <router-view></router-view>
-    <div class="bottomBtn">
+    <div class="bottomBtn" v-if="$route.meta.is_indexMenu">
       <!-- :class="activeMenu==index?'active':''" -->
       <div v-for="(item,index) in menuList" :key="index" :class="{'active':isactive(item)}"  @click="moveto(item,index)">
           <i class="iconfont" :class="item.icon"></i>
@@ -39,6 +39,9 @@ export default {
         }
       ]
     }
+  },
+  mounted(){
+    console.log(this.$route)
   },
   computed:{
     

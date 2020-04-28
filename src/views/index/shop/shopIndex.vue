@@ -1,9 +1,11 @@
 <template>
   <div class="shopIndex">
     <div class="minbody">
-      <router-view></router-view>
+      <keep-alive include="shopenterIn">
+       <router-view></router-view>
+      </keep-alive>
     </div>
-    <div class="bottomBtn">
+    <div class="bottomBtn" v-if="$route.meta.is_qshMenu">
       <!-- :class="activeMenu==index?'active':''" -->
       <div v-for="(item,index) in menuList" :key="index" :class="{'active':isactive(item)}"  @click="moveto(item,index)">
           <i class="iconfont" :class="item.icon"></i>

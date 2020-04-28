@@ -4,6 +4,11 @@ import Vue from 'vue'
 import App from './views/App'
 // import index from './views/index'
 import router from './router'
+import Router from 'vue-router'
+const routerPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error=> error)
+}
 //引入饿了么组件
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -130,6 +135,7 @@ let user = {
 };
 localStorage.setItem("userInfo", JSON.stringify(user));
 window.userInfo = JSON.parse(localStorage.getItem("userInfo"));
+Vue.prototype.$bus = new Vue();
 
 new Vue({
   el: '#app',

@@ -122,6 +122,10 @@ body{
 	background-color: #f7f7f7;
 	color: #333333;
 }
+.bg-main{
+	background-color: #DD3913;
+	color: white;
+}
 /* -----背景颜色 ---- */
 
 /* -----字体大小---- */
@@ -377,6 +381,9 @@ body{
 }
 .flex{
 	display: flex;
+}
+.flex1{
+	flex: 1;
 }
 .flexc{
 	align-items: center;
