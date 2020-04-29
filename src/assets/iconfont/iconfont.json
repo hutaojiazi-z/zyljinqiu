@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6568771",
+      "name": "筛选",
+      "font_class": "shaixuan",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "8348164",
+      "name": "邮件",
+      "font_class": "youjian",
+      "unicode": "e725",
+      "unicode_decimal": 59173
+    },
+    {
+      "icon_id": "687171",
+      "name": "相机",
+      "font_class": "xiangji",
+      "unicode": "e670",
+      "unicode_decimal": 58992
+    },
+    {
+      "icon_id": "11463784",
+      "name": "选中",
+      "font_class": "xuanzhong1",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "5677310",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "689279",
+      "name": "删除 关闭 叉",
+      "font_class": "shanchuguanbicha",
+      "unicode": "e809",
+      "unicode_decimal": 59401
+    },
+    {
       "icon_id": "6444229",
       "name": "招商小程序-邀请榜",
       "font_class": "zhaoshangxiaochengxu-yaoqingbang",

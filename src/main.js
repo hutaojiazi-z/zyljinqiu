@@ -41,7 +41,8 @@ Vue.use(BaiduMap, {
 
 window.url={
   forePath : "https://t5.jinqiunianhua.cn/login.html",
-  zhPath : "https://t8.jinqiunianhua.cn/", //整合后
+  zhPath : "http://192.168.3.5:8020/", //整合后fc
+  // zhPath : "https://t8.jinqiunianhua.cn/", //整合后
   qshPath : "https://t3.jinqiunianhua.cn/",
   tjPath : "https://t2.jinqiunianhua.cn/",
   tgPath : "https://t1.jinqiunianhua.cn/",

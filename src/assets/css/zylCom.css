@@ -95,6 +95,14 @@ body{
 /* -----字体颜色---- */
 
 /* -----背景颜色---- */
+.bg-darkgray1{
+	background-color: #4D4D4D !important;
+	color: white;
+}
+.bg-darkgray{
+	background-color: #666666 !important;
+	color: white;
+}
 .bg-w{
 	background-color: #ffffff !important;
 }
@@ -288,6 +296,10 @@ body{
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
 }
+.paddinglr25{
+	padding-left: 25px;
+	padding-right: 25px;
+}
 /* -----边距padding---- */
 /* -----行高---- */
 .lineheight30{
@@ -347,6 +359,9 @@ body{
 /* 定位 */
 .positionrel{
 	position: relative;
+}
+.positionabs{
+	position: absolute;
 }
 .positionfather{
 	position: inherit;
