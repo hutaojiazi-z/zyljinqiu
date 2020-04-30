@@ -4,12 +4,12 @@
       <search>
         <button class="smbtn bg-main pubSearch">搜索</button>
       </search>
-      <div class="headscreen padding8 fontSize16">
+      <div class="headscreen padding8 fontSize16 fontweight600">
         <ul>
           <li v-for="(item,index) in HeadmenuList"
-            :class="{'menuactive':mNIndex==index}"
+            :class="{'menuactive':(mNIndex==index)}"
             :key="item.typeId" 
-            @click="linkToDetail(item.typeId)">
+            @click="linkToDetail(item.typeId,index)">
             {{item.typeName}}
             </li>
         </ul>
@@ -33,7 +33,9 @@
       </ul>
       <div class="mainbody flex">
         <div class="aside">
-          <li v-for="(item,index) in sidemenuList" :key="index">{{item.typeName}}</li>
+          <ul>
+            <li class="fontSize13" v-for="(item,index) in sidemenuList" :key="index"><span :class="{'sideActive' : (sideIndex==index)}">{{item.typeName}}</span></li>
+          </ul>
         </div>
         <div class="mainCon flex1">
 
@@ -55,6 +57,7 @@ export default {
   data() {
     return {
       mNIndex: 0,//当前头部导航索引
+      sideIndex: 0,//侧导航索引
       HeadmenuList: [],
       sidemenuList: [],
       order: 1,//排序
@@ -72,15 +75,16 @@ export default {
      .then( res => {
       console.log(res)
       this.HeadmenuList = res.data.data;      
-      this.linkToDetail(this.HeadmenuList[this.mNIndex].typeId);
+      this.linkToDetail(this.HeadmenuList[this.mNIndex].typeId,0);
      })
    },
-   linkToDetail(typeId) {//获取详情页面
+   linkToDetail(typeId,index) {//获取详情页面
      let url =  window.url.zhPath + '/flowPoolType/selectByParentId';
      this.$axios.get ( url, { params:{"parentId": typeId}})
      .then( res => {
       console.log(res)
       this.sidemenuList = res.data.data;
+      this.mNIndex = index;
      })
    },
    changeorder(pram) {//改变排序规则
@@ -100,6 +104,7 @@ export default {
 }
 .publichead input{
   border: 1px solid #DD3913 !important;
+  border-radius: 5px !important;
 }
 </style>
 <style lang="less" scoped>
@@ -110,7 +115,7 @@ export default {
       position: absolute;
       right: 0;
       line-height: 25px;
-      border-radius: 15px;
+      border-radius: 0 5px 5px 0;
       margin-right: 15px;
     }
     .headscreen{
@@ -168,6 +173,33 @@ export default {
       height: calc( 100vh - 212px);
       .aside{
         width: 23vw;
+        padding: 8px 0;
+        height: 100%;
+        overflow: hidden;
+        ul{
+          overflow: scroll;
+          height: 100%;
+          li{
+            // line-height: 30px;
+            overflow: hidden;
+            text-overflow:ellipsis;
+            white-space: nowrap;
+            padding: 5px;
+            span{
+              display: block;
+              padding: 0 10px;
+            }
+            .sideActive{
+              border-left: 3px solid #DD3913;
+              color: #DD3913;
+            }
+          }
+          
+          &::-webkit-scrollbar{
+            display:none
+          }
+        }
+        
       }
       .mainCon{
         background-color: #f5f5f5;
