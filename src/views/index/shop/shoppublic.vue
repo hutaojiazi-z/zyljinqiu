@@ -19,14 +19,14 @@
       <ul class="flexBC paddinglr20 paddingtb10">
         <li class="positionrel order">价格排序
           <div class="positionabs" @click="changeorder('price')">
-            <p class="asc " :class="{'checkedasc':order == 1}"></p>
-            <p class="desc" :class="{'checkedsc':order == 2}"></p>
+            <p class="asc " :class="{'checkedasc':getPD.rankType == 1}"></p>
+            <p class="desc" :class="{'checkedsc':getPD.rankType == 2}"></p>
           </div>
         </li>
         <li class="positionrel order">粉丝数
           <div class="positionabs" @click="changeorder('fans')">
-            <p class="asc" :class="{'checkedasc':order == 3}"></p>
-            <p class="desc" :class="{'checkedsc':order == 4}"></p>
+            <p class="asc" :class="{'checkedasc':getPD.rankType == 3}"></p>
+            <p class="desc" :class="{'checkedsc':getPD.rankType == 4}"></p>
           </div>
         </li>
         <li><i class="iconfont icon-shaixuan marginr5"></i>筛选</li>
@@ -34,11 +34,27 @@
       <div class="mainbody flex">
         <div class="aside">
           <ul>
-            <li class="fontSize13" v-for="(item,index) in sidemenuList" :key="index"><span :class="{'sideActive' : (sideIndex==index)}">{{item.typeName}}</span></li>
+            <li class="fontSize13" v-for="(item,index) in sidemenuList" :key="index">
+              <span :class="{'sideActive' : (sideIndex==index)}"></span><span :class="{'maincolor' : (sideIndex==index)}">{{item.typeName}}</span>
+            </li>
           </ul>
         </div>
         <div class="mainCon flex1">
+          <head class="flexBC paddingtb10 paddinglr15">
+            <div class="fontweight600">抖音</div>
+            <div>
+              <input type="checkBox" />
+              <label for="allCheck">全选</label>
+            </div>
+          </head>
+          <div class="mainbody">
+            <li>
+              <div>
 
+              </div>
+              <img src="/null/icon/20200507/1,588,848,125,425.png" alt="优质社群" />
+            </li>
+          </div>
         </div>
       </div>
     </div>
@@ -60,13 +76,28 @@ export default {
       sideIndex: 0,//侧导航索引
       HeadmenuList: [],
       sidemenuList: [],
-      order: 1,//排序
+      // order: 1,//排序
       //选择流量主
-
+      getPD:{
+        page:1,
+        size:6,
+        rankType:1,//排序
+        fPEntionList:[],//需求意向Id集合
+        flowPoolPeopleNumberMax: 30,
+        flowPoolPeopleNumberMin: 20,
+        flowPoolPricesCustomFinalMax: 50,
+        flowPoolPricesCustomFinalMin: 25,
+        searchString: "",
+        typeId: "",//左侧当行id
+        userId: window.userInfo.exId,
+      }
     }
   },
   mounted() {
     this.getHeadList()
+  },
+  watch(){
+
   },
   methods: {
    getHeadList() {//获取头部导航
@@ -78,23 +109,35 @@ export default {
       this.linkToDetail(this.HeadmenuList[this.mNIndex].typeId,0);
      })
    },
-   linkToDetail(typeId,index) {//获取详情页面
+   linkToDetail(typeId,index) {//获取左侧导航列表
      let url =  window.url.zhPath + '/flowPoolType/selectByParentId';
      this.$axios.get ( url, { params:{"parentId": typeId}})
      .then( res => {
       console.log(res)
       this.sidemenuList = res.data.data;
       this.mNIndex = index;
+      this.getPD.typeId = res.data.data[index].typeId;
      })
    },
    changeorder(pram) {//改变排序规则
-     let orderThe = this.order;
+     let orderThe = this.getPD.rankType;
      if(pram == "price") {
-       this.order = orderThe == 1 ? 2 : 1 ;
+       this.getPD.rankType = orderThe == 1 ? 2 : 1 ;
      } else {
-       this.order = orderThe == 3 ? 4 : 3 ;
+       this.getPD.rankType = orderThe == 3 ? 4 : 3 ;
      }
    },
+    getPoolDetail(){
+      let url = window.url.zhPath + "/sponsorDemand/selectMyFPOwnerByFPT";
+      this.$axios.get ( url, {
+        params:this.getPD
+       })
+      .then( res => {
+        console.log(res)
+        this.HeadmenuList = res.data.data;      
+        this.linkToDetail(this.HeadmenuList[this.mNIndex].typeId,0);
+      })
+    }
   }
 }
 </script>
@@ -185,16 +228,22 @@ export default {
             text-overflow:ellipsis;
             white-space: nowrap;
             padding: 5px;
+            display: flex;
+            align-items: center;
             span{
-              display: block;
               padding: 0 10px;
+              &:first-child{
+                width: 4px;
+                height:16px;
+                padding: 0;
+                border-radius: 2px;
+              }
             }
             .sideActive{
-              border-left: 3px solid #DD3913;
+              background-color: #DD3913;
               color: #DD3913;
             }
           }
-          
           &::-webkit-scrollbar{
             display:none
           }
