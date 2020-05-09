@@ -47,13 +47,28 @@
               <label for="allCheck">全选</label>
             </div>
           </head>
-          <div class="mainbody">
-            <li>
-              <div>
+          <div class="mainConbody paddinglr10">
 
+            <li>
+              <div class="liMain flexBC">
+                <dl class="flex flexc">
+                  <div class="headImg marginr5">
+                    <img src="http://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKj8T40TxMDo1ic6qBwN2Q1zCYlelicpJUNnwtrNd5O6cKIJ5oLSgTWnWRyl3GTC6YLjm8lXw18dfMQ/132" alt="">
+                  </div>
+                  <div class="flex1 fontSize12">
+                    <h3 class="fontSize14">我是抖音</h3>
+                    <p class="darkgray">粉丝数：1W+</p>
+                    <p class="darkgray">推广费：￥200/天</p>
+                  </div>
+                </dl>
+                <dl class="darkgray">
+                  <label for="poolOwner"><i class="iconfont icon-gouwuche"></i></label>
+                  <input type="checkbox" name="poolOwner">
+                </dl>
               </div>
-              <img src="/null/icon/20200507/1,588,848,125,425.png" alt="优质社群" />
+              <img class="yZGroup" src="http://img.99add.com//null/icon/20200507/1,588,848,125,425.png" alt="优质社群" />
             </li>
+
           </div>
         </div>
       </div>
@@ -252,6 +267,29 @@ export default {
       }
       .mainCon{
         background-color: #f5f5f5;
+        .mainConbody{
+      
+          li{
+            position: relative;
+            background-color: white;
+            border-radius: 5px;
+            .liMain{
+              padding: 8px;
+              .headImg{
+                width: 45px;
+                height: 45px;
+                border-radius: 50%;
+                overflow: hidden;
+              }
+            }
+            .yZGroup{
+              position: absolute;
+              width: 35px;
+              right: 0;
+              top: 0;
+            }
+          }
+        }
       }
     }
   }
