@@ -17,6 +17,7 @@ import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 //引入公共css
 import './assets/css/zylCom.css'
+// import './assets/css/common.less'
 
 //阿里图标库
 import './assets/iconfont/iconfont.css'

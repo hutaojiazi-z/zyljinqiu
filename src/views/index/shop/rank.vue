@@ -1,6 +1,6 @@
 <template>
   <div>
-    <bdMap></bdMap>
+
   </div>
 </template>
 
@@ -9,6 +9,11 @@ import bdMap from "../../../components/mymap";
   export default {
     components:{
       bdMap
+    },
+    data(){
+      return {
+        
+      }
     }
   }
 </script>
