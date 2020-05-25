@@ -28,7 +28,7 @@
         <li>
           <el-col v-for="(item,index) in makemoney" v-show="index < liIndex" :key="index" :span="12" class="marginb10">
             <a href="../page/cheats/merchantsSettled.html">
-              <span class="bg-yellow fontSize6 hotSpan marginr5">HOT</span>
+              <span class="bg-main fontSize6 hotSpan marginr5">HOT</span>
               <span class="fontSize12">{{item.name}}</span> 
               <i class="iconfont icon-youjiantou-tianchong colorC marginl5 fontSize13"></i>
             </a>
@@ -56,17 +56,17 @@ export default {
         mainmenu:[
           {
             path:"/index/shopIndex",
-            src:"http://img.99add.com/@/null/icon/20200410/1,586,510,868,746.png",
+            src:"http://img.99add.com/@/null/icon/20200512/1,589,265,763,807.png",
             name:"商家入驻"
          },
          {
             path:"/index/shopIndex",
-            src:"http://img.99add.com/@/null/icon/20200410/1,586,510,686,363.png",
+            src:"http://img.99add.com/@/null/icon/20200515/1,589,533,301,113.png",
             name:"流量主入驻"
          },
          {
             path:"/index/shopIndex",
-            src:"http://img.99add.com/@/null/icon/20200410/1,586,510,848,015.png",
+            src:"http://img.99add.com/@/null/icon/20200512/1,589,265,694,748.png",
             name:"客户经理入驻"
          }
         ],

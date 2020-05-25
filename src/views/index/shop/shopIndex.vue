@@ -60,6 +60,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
+@import '../../../assets/css/common.less';
 .minbody{
   margin-bottom: 50px;
 }
@@ -78,7 +79,7 @@ export default {
     color: #999999;
   }
   .active{
-    color: #FEA61C;
+    color: @base;
 
   }
 }

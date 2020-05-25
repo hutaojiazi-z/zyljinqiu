@@ -41,7 +41,7 @@ export default {
     }
   },
   mounted(){
-    console.log(this.$route)
+    // console.log(this.$route)
   },
   computed:{
     
@@ -59,6 +59,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
+@import '../assets/css/common.less';
 .bottomBtn{
   position: fixed;
   bottom: 0;
@@ -73,7 +74,7 @@ export default {
     color: #999999;
   }
   .active{
-    color: #FEA61C;
+    color: @base;
 
   }
 }
